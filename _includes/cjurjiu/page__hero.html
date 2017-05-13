@@ -1,0 +1,49 @@
+{% if page.header.overlay_image contains "://" %}
+  {% capture overlay_img_path %}{{ page.header.overlay_image }}{% endcapture %}
+{% elsif page.header.overlay_image %}
+  {% capture overlay_img_path %}{{ page.header.overlay_image | absolute_url }}{% endcapture %}
+{% endif %}
+
+<div class="cjurjiu-page__hero{% if page.header.overlay_color or page.header.overlay_image %}--overlay{% endif %}"
+     style="{% if page.header.overlay_color %}background-color: {{ page.header.overlay_color | default: 'transparent' }};{% endif %} {% if overlay_img_path %}background-image: {% if overlay_filter %}linear-gradient({{ overlay_filter }}, {{ overlay_filter }}), {% endif %}url('{{ overlay_img_path }}');{% endif %}">
+
+     {% if page.header.overlay_color or page.header.overlay_image %}
+     <div class="wrapper">
+       <h1 class="page__title" itemprop="headline">
+         {% if page.title %}
+         {{ page.title | default: site.title | markdownify | remove: "<p>" | remove: "</p>" }}
+         {% endif %}
+         {% if page.location.location_text %}
+         <h3 class="page__location">
+             {% if page.location.coordinates %}
+             <a href="{{ page.location.coordinates }}" target="_blank">
+               <span class="fa fa-map-marker" aria-hidden="true"></span>
+             {{ page.location.location_text }}
+             </a>
+             {% else %}
+            {{ page.location.location_text }}
+            {% endif %}
+          </h3>
+         {% endif %}
+       </h1>
+       {% if site.read_time and page.read_time %}
+       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
+       {% endif %}
+       {% if page.links %}
+       <p class="links__container">
+         {% for l in page.links %}
+         <a href="{{ l.url }}" class="btn btn--inverse--light btn--large front-page-links">
+           {{ l.description }}
+         </a>
+         {% endfor %}
+       </p>
+       {% endif %}
+     </div>
+     {% else %}
+     <img src="{{ img_path }}" alt="{{ page.title }}" class="cjurjiu-page__hero-image">
+     {% endif %}
+
+  {% if page.header.caption %}
+  <span class="cjurjiu-page__hero-caption">{{ page.header.caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+  {% endif %}
+</div>
