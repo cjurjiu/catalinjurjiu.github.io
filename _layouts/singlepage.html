@@ -1,0 +1,10 @@
+---
+layout: cj-default
+author_profile: true
+---
+<div id="main" role="main">
+  {% include sidebar.html %}
+  {% for section in site.singlepage-content %}
+    {% include cjurjiu/single_page_section.html singlepage_content=section %}
+  {% endfor %}
+</div>

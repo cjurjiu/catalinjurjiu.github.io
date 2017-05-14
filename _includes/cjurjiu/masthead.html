@@ -3,18 +3,19 @@
     <div class="header__menu">
       <nav id="site-navbar" class="greedy">
         <div class="header__menu-item header__menu-item--lg">
-          <a href="http://127.0.0.1:4000#about">Catalin Jurjiu</a>
+          <a href="{{ site.url }}"> {{ site.title }} </a>
         </div>
         <ul class="links">
-          <li class="header__menu-item">
-            <a href="http://127.0.0.1:4000#home">Home</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="http://127.0.0.1:4000#about">About</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="http://127.0.0.1:4000#blog">Blog</a>
-          </li>
+          {% for navbar_item in site.data.navigation.main %}
+            {% if navbar_item.url contains 'http' %}
+              {% assign domain = '' %}
+            {% else %}
+              {% assign domain = site.url | append: site.baseurl %}
+            {% endif %}
+            <li class="header__menu-item">
+              <a href="{{ domain }}{{ navbar_item.url }}">{{ navbar_item.title }}</a>
+            </li>
+          {% endfor %}
         </ul>
         <button class="hidden" count="0">
           <div class="navbaricon"></div>

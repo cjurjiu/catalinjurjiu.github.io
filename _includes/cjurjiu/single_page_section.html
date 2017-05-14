@@ -1,0 +1,27 @@
+  <article {% if include.singlepage_content.id %} id="{{ include.singlepage_content.id }}" {% endif %} class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    {% if include.singlepage_content.title %}<meta itemprop="headline" content="{{ include.singlepage_content.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if include.singlepage_content.excerpt %}<meta itemprop="description" content="{{ include.singlepage_content.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if include.singlepage_content.date %}<meta itemprop="datePublished" content="{{ include.singlepage_content.date | date: "%B %d, %Y" }}">{% endif %}
+    {% if include.singlepage_content.last_modified_at %}<meta itemprop="dateModified" content="{{ include.singlepage_content.last_modified_at | date: "%B %d, %Y" }}">{% endif %}
+
+    <div class="page__inner-wrap">
+      {% unless include.singlepage_content.header.overlay_color or include.singlepage_content.header.overlay_image %}
+        <header>
+          {% if include.singlepage_content.title %}<h1 class="page__title" itemprop="headline">{{ include.singlepage_content.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+          {% if include.singlepage_content.read_time %}
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
+          {% endif %}
+        </header>
+      {% endunless %}
+
+      <section class="page__content" itemprop="text">
+        {{ content }}
+        {% if include.singlepage_content.link %}<div><a href="{{ include.singlepage_content.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+      </section>
+      <footer class="page__meta">
+        {% if site.data.ui-text[site.locale].meta_label %}
+          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+        {% endif %}
+      </footer>
+    </div>
+  </article>

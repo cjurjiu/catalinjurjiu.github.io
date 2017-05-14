@@ -24,23 +24,6 @@ $.extend($.easing,
     }, options);
     navItems = this;
 
-    //attach click listeners
-    navItems.on('click', function (event) {
-      event.preventDefault();
-      var navID = $(this).attr("href").substring(1);
-      // disableScrollFn = true;
-      activateNav(navID);
-      populateDestinations(); //recalculate these!
-      // $('html,body').animate({scrollTop: sections[navID] - settings.scrollToOffset},
-      //       settings.scrollSpeed, "easeInOutExpo", function(){
-      //           disableScrollFn = false;
-      //       }
-      //   );
-    });
-
-    //populate lookup of clickable elements and destination sections
-    populateDestinations(); //should also be run on browser resize, btw
-
     // setup scroll listener
     $(document).scroll(function () {
       if (disableScrollFn) {
@@ -79,20 +62,6 @@ $.extend($.easing,
     var rxp = new RegExp("s?b" + classname + "b", "g");
     cn = cn.replace(rxp, '');
     element.className = cn;
-  }
-
-  function populateDestinations() {
-    navItems.each(function () {
-      var scrollID = $(this).attr('href').substring(1);
-      var hrefString = $(this).attr('href');
-      navs[scrollID] = (settings.activateParentNode) ? this.parentNode : this;
-      var offset = sections[scrollID] = $(document.getElementById(scrollID)).offset();
-      if (offset != null) {
-        sections[scrollID] = offset.top;
-      } else {
-        console.warn("failed to find offset of href:" + hrefString);
-      }
-    });
   }
 
   function activateNav(navID) {

@@ -18,12 +18,23 @@
 
     {% include browser-upgrade.html %}
     {% include cjurjiu/masthead.html %}
+    
+    {% if page.header.overlay_image %}
+      {% include cjurjiu/page__hero.html %}
+    {% endif %}
 
     {{ content }}
 
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include footer.html %}
+      </footer>
+    </div>
+
     {% include scripts.html %}
-    <script src="./assets/js/cjurjiu/greedynav.js"></script>
-    <script src="./assets/js/cjurjiu/smooth_scroll.js"></script>
+    <script src="{{ '/assets/js/cjurjiu/greedynav.js' | absolute_url }}"></script>
+    <script src="{{ '/assets/js/cjurjiu/smooth_scroll.js' | absolute_url }}"></script>
 
   </body>
 </html>
