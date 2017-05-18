@@ -1,7 +1,7 @@
 ---
 layout: singlepage-archive
 permalink: /categories/
-title: 'Android developer Tech passionate'
+title: 'Android developer, tech passionate'
 header:
   overlay_image: ./assets/images/plane-over-clouds.jpg
 author_profile: true

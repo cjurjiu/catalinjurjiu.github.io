@@ -1,2 +1,10 @@
 /* type scale */
 $type-size-3-5: 1.35em; // ~22.5px
+
+/*
+   Grid OVERRIDE FROM minimal-mistakes/_variables.scss
+   ========================================================================== */
+
+$right-sidebar-width-narrow : 150px;
+$right-sidebar-width        : 250px;
+$right-sidebar-width-wide   : 300px;

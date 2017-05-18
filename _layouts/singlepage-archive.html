@@ -5,21 +5,38 @@ author_profile: true
 <div id="main" role="main">
   {% include sidebar.html %}
 
-<ul class="tag-box inline">
-{% assign tags_list = site.categories %}  
-  {% if tags_list.first[0] == null %}
-    {% for tag in tags_list %} 
-      <li><a href="#{{ tag }}">{{ tag | capitalize }} <span>{{ site.tags[tag].size }}</span></a></li>
+  <div class="archive">
+
+<ul class="category-box inline">
+{% assign category_list = site.categories %}  
+  {% if category_list.first[0] == null %}
+
+    {% for category in category_list %} 
+      <li>
+        <a class="btn btn--small btn--inverse" href="#{{ category | downcase }}">
+          {{ category | capitalize }} 
+          <span>
+            {{ site.categories[category].size }}
+          </span>
+        </a>
+      </li>
     {% endfor %}
   {% else %}
-    {% for tag in tags_list %} 
-      <li><a href="#{{ tag[0] }}">{{ tag[0] | capitalize }} <span>{{ tag[1].size }}</span></a></li>
+    {% for category in category_list %} 
+      <li>
+        <a class="btn btn--small btn--inverse" href="#{{ category[0] | downcase }}">
+          {{ category[0] | capitalize }}
+          <span>
+            {{ category[1].size }}
+          </span>
+        </a>
+      </li>
     {% endfor %}
+    
   {% endif %}
-{% assign tags_list = nil %}
+{% assign category_list = nil %}
 </ul>
 
-  <div class="archive">
   	{{ content }}
   </div>
 </div>

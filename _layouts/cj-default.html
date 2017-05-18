@@ -1,6 +1,5 @@
 ---
 ---
-
 <!doctype html>
 <!--
   Minimal Mistakes Jekyll Theme 4.4.1 by Michael Rose
@@ -21,8 +20,10 @@
     
     {% if page.header.overlay_image %}
       {% include cjurjiu/page__hero.html %}
+    {% else %}
+      <div class="spacer_div"></div>
     {% endif %}
-
+    
     {{ content }}
 
     <div class="page__footer">

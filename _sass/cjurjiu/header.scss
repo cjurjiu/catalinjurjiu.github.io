@@ -288,3 +288,24 @@
     }
   }
 }
+
+.spacer_div{
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background: url('http://localhost:4000/assets/images/plane-over-clouds-cropped-140h.jpg');
+  height: 84px;
+
+   @include breakpoint($medium) {
+    height: 95px;
+  }
+
+  @include breakpoint($large) {
+    height: 105px;
+  }
+
+  @include breakpoint($x-large) {
+    height: 116px;
+  }
+
+}
