@@ -31,13 +31,23 @@ $(function() {
  */
 // function updateNav() {
 function check() {
-  var mainItemWidth  = $lgItem.outerWidth();
+  var mainItemWidth = $lgItem.outerWidth();
   var widthWButton = $nav.width() - $btn.width() - mainItemWidth - 10;
-  var availableSpace = $btn.hasClass("hidden") ? $nav.width() - mainItemWidth : widthWButton;
+  var availableSpace = $btn.hasClass("hidden") ? $nav.width() - mainItemWidth -10 : widthWButton;
   var spaceReqForFullNavbar = $vlinks.width();
 
   if(availableSpace <= 0){
+    console.log("check#available space is below 0");
     //return if the availalbe space is less than 0, to prevent infinite loop
+    while( $vlinks.children().length > 0 ){
+      //remove all visible links when size is below 0
+      breaks.push(spaceReqForFullNavbar);
+      $vlinks.children().last().prependTo($hlinks);
+      spaceReqForFullNavbar = $vlinks.width();
+    }
+    if ($btn.hasClass("hidden")) {
+      $btn.removeClass("hidden");
+    }
     return;
   }
 
@@ -69,7 +79,6 @@ function check() {
   // Window listeners
   $(window).resize(function() {
     check();
-    console.log("check")
   });
 
   $btn.on('click', function() {
