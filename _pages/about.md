@@ -7,9 +7,9 @@ header:
 ---
 I'm a software engineer, focused on Android but always curious about other technologies. 
 
-This is the place where I share some of my projects and other findings, miscellaneous code and tools I've playing with to lately.
+This is the place where I share some of my projects, tools I've been playing with, miscellaneous code and other findings.
 
-I'm passionate about coding, planes[^1], space flight, new tech & many others.
+I'm passionate about coding, new tech, flight[^1], space & many others.
 
 Enjoy your stay here & feel free to get in touch.
 
