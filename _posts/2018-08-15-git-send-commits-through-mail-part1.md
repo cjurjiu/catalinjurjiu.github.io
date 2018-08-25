@@ -9,7 +9,9 @@ tags:
 
 Sometimes one needs to get creative in order to complete the job.<!--more-->
 
-This is a 3-part series, with this being the first part. The next two parts will arrive soon.
+This is a 3-part series, with this being the first part. 
+[Part 2](http://www.catalinjurjiu.com/git/git-send-commits-through-mail-part2) is already available, Part 3 will arrive 
+soon.
 
 ## Scenario 
 
@@ -44,7 +46,7 @@ email. Neat.
 
 Fun aside, let's go through 3 ways of achieving this: 
 - `git diff` (this article) 
-- `git format-patch` (Part 2 - coming soon)
+- `git format-patch` ([Part 2](http://www.catalinjurjiu.com/git/git-send-commits-through-mail-part2))
 - `git bundle` (Part 3 - coming soon)
 
 They are all similar in that they all save the diff between 2 commits to a file. However, there are certain significant
@@ -280,4 +282,5 @@ Surely there are better options? (hint: there are)
 Bob seems to have found a solution in the first day of working with his weird setup. However, he also quickly identified
 the limitations of this approach.
 
-In Part 2, we will continue Bob's 'adventure' to see what clever solution he found to some of these limitations. 
+In [Part 2](http://www.catalinjurjiu.com/git/git-send-commits-through-mail-part2), we will continue Bob's 'adventure' 
+to see what clever solution he found to some of these limitations. 
