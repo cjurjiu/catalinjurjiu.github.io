@@ -3,7 +3,7 @@
     <div class="header__menu">
       <nav id="site-navbar" class="greedy">
         <div class="header__menu-item header__menu-item--lg">
-          <a href="{{ site.url }}"> {{ site.title }} </a>
+          <a href="{{ site.url }}"> {{ site.author.name }} </a>
         </div>
         <ul class="links">
           {% for navbar_item in site.data.navigation.main %}

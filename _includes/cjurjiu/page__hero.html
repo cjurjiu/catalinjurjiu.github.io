@@ -10,8 +10,8 @@
      {% if page.header.overlay_color or page.header.overlay_image %}
      <div class="wrapper">
        <h1 class="page__title" itemprop="headline">
-         {% if page.title %}
-         {{ page.title | default: site.title | markdownify | remove: "<p>" | remove: "</p>" }}
+         {% if page.tagline %}
+         {{ page.tagline | default: site.tagline |markdownify | remove: "<p>" | remove: "</p>" }}
          {% endif %}
          {% if page.location.location_text %}
          <h3 class="page__location">

@@ -1,7 +1,6 @@
 ---
 layout: singlepage
 permalink: /about/
-title: 'Android developer, tech passionate'
 header:
   overlay_image: ./assets/images/plane-over-clouds.jpg
 ---
