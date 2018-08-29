@@ -11,7 +11,7 @@ Bob considers it's worth improving on top of the [`git diff`](http://www.catalin
 <!--more-->
 
 This is a multi-part series, with this being the second part. Best to start with [Part 1](http://www.catalinjurjiu.com/git/git-send-commits-through-mail-part1).
-There's also a Part 3 coming up.
+There's also a [Part 3](http://www.catalinjurjiu.com/git/git-send-commits-through-mail-part3).
 
 ## Recap
 
@@ -258,8 +258,8 @@ _______________________|______________________
 ```
 
 In certain cases this can make life harder, although most of the times it might not be an issue. We'll explore these cases
-in the upcoming Part 3. There, Bob will also finally find the holy grail of sending commits: a method which will also preserve the 
-SHA1 of each commit.
+in the final article of this series. There, Bob will also finally find the holy grail of sending commits: a method which 
+will also preserve the SHA1 of each commit.
 
 ## Conclusions
 
@@ -268,4 +268,4 @@ method presented in [Part 1](http://www.catalinjurjiu.com/git/git-send-commits-t
 trick to make `git am` apply automatically all the patches in order.
 
 However, there's one final point to solve: making sure the commits have identical SHA1 Id's on both machines. We will find
-out how to achieve this, in Part 3.
+out how to achieve this, in [Part 3](http://www.catalinjurjiu.com/git/git-send-commits-through-mail-part3).
