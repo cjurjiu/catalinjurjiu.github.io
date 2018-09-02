@@ -12,7 +12,7 @@ title_separator          : "-"
 name                     : "BLOG | Catalin Jurjiu"
 tagline                  : # a 'tagline' which appears on over the header image
 description              : "Tech blog with a focus on Android."
-url                      : "//cjurjiu.github.io"
+url                      : "//www.catalinjurjiu.com"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "cjurjiu/cjurjiu.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
