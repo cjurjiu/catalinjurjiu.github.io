@@ -156,7 +156,6 @@ incremental: false
 
 # Markdown Processing
 kramdown:
-  input: GFM
   hard_wrap: false
   auto_ids: true
   footnote_nr: 1
@@ -164,7 +163,14 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
-
+  input: GFM
+  # https://github.com/jekyll/jekyll/pull/4090
+  syntax_highlighter: rouge
+  # Rouge Highlighter in Kramdown › http://kramdown.gettalong.org/syntax_highlighter/rouge.html
+  # span, block element options fall back to global
+  syntax_highlighter_opts:
+    # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: 'highlight'
 
 # Sass/SCSS
 sass:
