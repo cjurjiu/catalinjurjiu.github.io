@@ -184,7 +184,7 @@ collections:
 - singlepage-content
 
 # Plugins
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
