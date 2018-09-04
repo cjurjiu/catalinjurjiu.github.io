@@ -59,7 +59,8 @@ figure.highlight {
 .highlight .hll { background-color: #214283 }
 .highlight  { background: #2B2B2B; color: #A9B7C6 }
 .highlight .c { color: #808072 } /* Comment */
-.highlight .err { color: #960050 } /* Error */
+//We don't want lexer errors to be highlighted
+//.highlight .err { color: #960050 } /* Error */
 .highlight .g { color: #808072 } /* Generic */
 .highlight .k { color: #CB772F } /* Keyword */
 .highlight .l { color: #6897BB } /* Literal */
