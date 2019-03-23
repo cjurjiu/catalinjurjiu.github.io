@@ -19,10 +19,10 @@ This is a multi-part series, in which I'll explore some of the ones I most commo
 
 ## `let`: short intro
 
-You can skip this section if you're familiar with how `let` works, and with its `nullableVar?.let {}` usage.
+You can skip to the next section ([The problem](#the-problem)) if you're familiar with how `let` works, and with its `nullableVar?.let {}` usage.
 {: .notice--info }
 
-`let { }` is a hugely practical extension function in Kotlin, which is most commonly used when we only want a block of code to be executed if and only if a nullable `var` is not `null`. While, this is not the only (or primary) purpose of `let` (see in [scoping functions](https://kotlinlang.org/docs/reference/scope-functions.html#let)), it's the way how it's most commonly used.
+`let { }` is a hugely practical extension function in Kotlin, which is most commonly used when we only want a block of code to be executed if and only if a nullable `var` is not `null`. While, this is not the only (or primary) purpose of `let` (see <a href="https://kotlinlang.org/docs/reference/scope-functions.html#let" target="blank">Scoping Functions: `let`</a>), it's the way how it's most commonly used.
 
 So basically, given this:
 {% highlight kotlin linenos %}
